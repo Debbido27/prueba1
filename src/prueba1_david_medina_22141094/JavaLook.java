@@ -8,7 +8,7 @@ package prueba1_david_medina_22141094;
  *
  * @author Dell
  */
-public class Prueba1_david_medina_22141094 {
+public class JavaLook {
 
     /**
      * @param args the command line arguments
