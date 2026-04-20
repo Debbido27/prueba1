@@ -4,17 +4,44 @@
  */
 package prueba1_david_medina_22141094;
 
-/**
- *
- * @author Dell
- */
+import java.util.Scanner;
 public class JavaLook {
-
-    /**
-     * @param args the command line arguments
-     */
+    private static EmailAccount[] cuentas=new EmailAccount[100];
+    private static EmailAccount cuentaActiva = null;
+    private static Scanner entrada = new Scanner (System.in);
+    
+  
     public static void main(String[] args) {
         // TODO code application logic here
+        int opcion;
+        do{
+            System.out.println("Menu principal");
+            System.out.println("1.Login");
+            System.out.println("2.Crear cuenta");
+            System.out.println("0. Salir");
+            System.out.println("Opcion: ");
+            opcion=entrada.nextInt();
+            
+            switch (opcion){
+                case 1:
+                    
+                    break;
+                    
+                case 2:
+                    
+                    break;
+                    
+                case 0:
+                    
+                    break;
+                    
+                    
+                default:
+                    
+                    break;
+                    
+            }
+        }while(opcion !=0);
     }
     
 }
