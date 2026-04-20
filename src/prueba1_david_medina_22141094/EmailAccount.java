@@ -13,7 +13,55 @@ public class EmailAccount {
         this.nombreCompleto=nombreCompleto;
         this.inbox=new Email[100];
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public Email[] getInbox() {
+        return inbox;
+    }
+
+    public void setInbox(Email[] inbox) {
+        this.inbox = inbox;
+    }
     
     
+    public boolean recibirCorreo(Email email){
+        for (int i = 0; i < inbox.length; i++) {
+            if(inbox[i]==null){
+                inbox[i]=email;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public void mostrarInbox(){
+        System.out.println("===INBOX===");
+        System.out.println("Cuenta :"+address);
+        System.out.println("Usuario: "+nombreCompleto);
+        System.out.println("========================");
+    }
     
 }
