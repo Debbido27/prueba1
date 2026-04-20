@@ -78,10 +78,50 @@ public class EmailAccount {
                 
                 System.out.println(i+"-"+inbox[i].getCorreoE()+"-"+inbox[i].getAsunto()+"-["+estado+"]");
                 total++;
+                
+                if(!inbox[i].isLeido()){
+                    sinLeer++;
+                }
             }
         }
-              
         
+        System.out.println("--     --");
+        System.out.println("Sin leer: "+sinLeer+" | Total: "+total); 
+    }
+    
+    public void leercorreo(int pocision){
+        if(pocision<0){
+            System.out.println("numero no valido");
+            return;
+        }
+        
+        if(pocision>=inbox.length){
+            System.out.println("Correo no existe");
+            return;
+        }
+        
+        if(inbox[pocision]==null){
+            System.out.println("Correo no existe");
+            return;
+        }
+        
+        inbox[pocision].impresion();
+        inbox[pocision].marcarLeido();
+        
+    }
+    
+    public void eliminarLeidos(){
+        int eliminados=0;
+        
+        for (int i = 0; i < inbox.length; i++) {
+            if(inbox[i]!=null){
+                if(inbox[i].isLeido()){
+                    inbox[i]=null;
+                    eliminados++;
+                }
+            }
+        }
+        System.out.println(eliminados+"correos eliminados");
     }
     
 }
