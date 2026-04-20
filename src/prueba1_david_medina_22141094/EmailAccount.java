@@ -62,6 +62,26 @@ public class EmailAccount {
         System.out.println("Cuenta :"+address);
         System.out.println("Usuario: "+nombreCompleto);
         System.out.println("========================");
+        
+        int total = 0;
+        int sinLeer =0;
+        
+        for (int i = 0; i < inbox.length; i++) {
+            if(inbox[i]!=null){
+                String estado;
+                
+                if(inbox[i].isLeido()){
+                    estado="Leido";
+                }else{
+                    estado="No leido";
+                }
+                
+                System.out.println(i+"-"+inbox[i].getCorreoE()+"-"+inbox[i].getAsunto()+"-["+estado+"]");
+                total++;
+            }
+        }
+              
+        
     }
     
 }
